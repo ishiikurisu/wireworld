@@ -1,0 +1,6 @@
+---
+build:
+    local: false
+    commands:
+    - go test github.com/ishiikurisu/wireworld
+...
