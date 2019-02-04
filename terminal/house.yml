@@ -1,0 +1,11 @@
+---
+build:
+    local: false
+    commands:
+    - go build github.com/ishiikurisu/wireworld/terminal
+
+execute:
+    local: false
+    commands:
+    - terminal.exe data/wireworld/test.txt
+...
