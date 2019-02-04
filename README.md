@@ -19,3 +19,5 @@ As in all cellular automata, time proceeds in discrete steps called generations 
 - electron head - electron tail,
 - electron tail - conductor,
 - conductor - electron head if exactly one or two of the neighbouring cells are electron heads, otherwise remains conductor.
+
+Wireworld uses what is called the Moore neighborhood, which means that in the rules above, neighbouring means one cell away (range value of one) in any direction, both orthogonal and diagonal.

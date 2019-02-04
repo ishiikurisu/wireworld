@@ -67,9 +67,9 @@ func Update(inlet Wireworld) Wireworld {
 				break
 			case CONDUCTOR:
 				fromX := max(0, x-1)
-				toX := min(inlet.Dx, x+1)
+				toX := min(inlet.Dx, x+2)
 				fromY := max(0, y-1)
-				toY := min(inlet.Dy, y+1)
+				toY := min(inlet.Dy, y+2)
 				heads := 0
 
 				for i := fromX; i < toX; i++ {

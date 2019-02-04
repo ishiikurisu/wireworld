@@ -26,6 +26,9 @@ func LoadCsv(csv string) (Wireworld, error) {
 			case "1":
 				w.World[y][x].Kind = POSITIVE
 				break
+			case "2":
+				w.World[y][x].Kind = NEGATIVE
+				break
 			case "3":
 				w.World[y][x].Kind = CONDUCTOR
 				break
