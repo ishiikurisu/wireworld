@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// loads 
+// loads
 func LoadCsv(csv string) (wireworld.Wireworld, error) {
 	// building string matrix
 	csv = strings.TrimSpace(csv)
@@ -28,7 +28,7 @@ func LoadCsv(csv string) (wireworld.Wireworld, error) {
 				w.World[y][x].Kind = wireworld.POSITIVE
 				break
 			case "3":
-				w.World[y][x].Kind = wireworld.POSITIVE
+				w.World[y][x].Kind = wireworld.CONDUCTOR
 				break
 			}
 		}
