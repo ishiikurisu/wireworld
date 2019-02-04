@@ -23,5 +23,24 @@ func TestWireworldCanSetDefaultValues(t *testing.T) {
 }
 
 func TestBasicWireworldOperation(t *testing.T) {
-	
+	csv := generateTestWorld()
+	w, _ := LoadCsv(csv)
+	w = Update(w)
+
+	if w.World[0][0].Kind != EMPTY {
+		t.Error("Couldn't understand what an empty cell is")
+		return
+	}
+	if w.World[1][1].Kind != NEGATIVE {
+		t.Error("Couldn't understand what a positive cell is")
+		return
+	}
+	if w.World[1][2].Kind != POSITIVE {
+		t.Error("Couldn't understand what a conductor cell is")
+		return
+	}
+	if w.World[1][3].Kind != CONDUCTOR {
+		t.Error("Couldn't understand what another conductor cell is")
+		return
+	}
 }

@@ -1,8 +1,7 @@
-package util
+package wireworld
 
 import (
 	"testing"
-	"github.com/ishiikurisu/wireworld"
 )
 
 func generateTestWorld() string {
@@ -24,19 +23,19 @@ func TestPackageCanLoadCsv(t *testing.T) {
 		t.Error("Couldn't load Y direction properly")
 		return
 	}
-	if w.World[0][0].Kind != wireworld.EMPTY {
+	if w.World[0][0].Kind != EMPTY {
 		t.Error("Couldn't understand what an empty cell is")
 		return
 	}
-	if w.World[1][1].Kind != wireworld.POSITIVE {
+	if w.World[1][1].Kind != POSITIVE {
 		t.Error("Couldn't understand what a positive cell is")
 		return
 	}
-	if w.World[1][2].Kind != wireworld.CONDUCTOR {
+	if w.World[1][2].Kind != CONDUCTOR {
 		t.Error("Couldn't understand what a conductor cell is")
 		return
 	}
-	if w.World[1][3].Kind != wireworld.CONDUCTOR {
+	if w.World[1][3].Kind != CONDUCTOR {
 		t.Error("Couldn't understand what another conductor cell is")
 		return
 	}

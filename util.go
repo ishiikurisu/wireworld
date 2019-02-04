@@ -1,12 +1,11 @@
-package util
+package wireworld
 
 import (
-	"github.com/ishiikurisu/wireworld"
 	"strings"
 )
 
 // loads
-func LoadCsv(csv string) (wireworld.Wireworld, error) {
+func LoadCsv(csv string) (Wireworld, error) {
 	// building string matrix
 	csv = strings.TrimSpace(csv)
 	raw := make([][]string, 0)
@@ -20,15 +19,15 @@ func LoadCsv(csv string) (wireworld.Wireworld, error) {
 	// storing data in wireworld object
 	dx := len(raw[0])
 	dy := len(raw)
-	w := wireworld.NewWireworld(dx, dy)
+	w := NewWireworld(dx, dy)
 	for y := 0; y < dy; y++ {
 		for x := 0; x < dx; x++ {
 			switch raw[y][x] {
 			case "1":
-				w.World[y][x].Kind = wireworld.POSITIVE
+				w.World[y][x].Kind = POSITIVE
 				break
 			case "3":
-				w.World[y][x].Kind = wireworld.CONDUCTOR
+				w.World[y][x].Kind = CONDUCTOR
 				break
 			}
 		}
