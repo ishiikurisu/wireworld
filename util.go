@@ -40,6 +40,36 @@ func LoadCsv(csv string) (Wireworld, error) {
 	return w, nil
 }
 
+func ConvertToCsv(w Wireworld) string {
+	s := ""
+
+	for y := 0; y < w.Dy; y++ {
+		for x := 0; x < w.Dx; x++ {
+			switch w.World[y][x].Kind {
+			case EMPTY:
+				s += "0"
+				break
+			case NEGATIVE:
+				s += "2"
+				break
+			case POSITIVE:
+				s += "1"
+				break
+			case CONDUCTOR:
+				s += "3"
+				break
+			}
+			if x == w.Dx-1 {
+				s += "\n"
+			} else {
+				s += ";"
+			}
+		}
+	}
+
+	return s
+}
+
 func max(a, b int) int {
 	if a >= b {
 		return a
