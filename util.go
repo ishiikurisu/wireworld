@@ -36,3 +36,19 @@ func LoadCsv(csv string) (Wireworld, error) {
 
 	return w, nil
 }
+
+func max(a, b int) int {
+	if a >= b {
+		return a
+	} else {
+		return b
+	}
+}
+
+func min(a, b int) int {
+	if a <= b {
+		return a
+	} else {
+		return b
+	}
+}
