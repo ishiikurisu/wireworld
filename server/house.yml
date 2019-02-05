@@ -1,0 +1,11 @@
+---
+build:
+    local: false
+    commands:
+    - go build github.com/ishiikurisu/wireworld/server
+
+execute:
+    local: false
+    commands:
+    - server.exe 2324
+...
